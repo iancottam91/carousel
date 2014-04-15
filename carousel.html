@@ -5,10 +5,12 @@
 	<title>carousel</title>
 	<!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link rel="stylesheet" type="text/css" href="css/carousel.css">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
 </head>
 <body>
-	<nav class="navbar navbar-inverse navbar-fixed-top">
+	<nav class="navbar-inverse">
 		<div class="container">
 			<div class="navbar-header">
 	          <a class="navbar-brand" href="#">Explore Bootstrap</a>
@@ -20,27 +22,45 @@
 			</ul>
 		</div>
 	</nav>
-	<div class="jumbotron">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<h1>Carousel jQuery Plugin</h1>	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Vertical</h1>	
+			</div>
+		</div>	
+		<div class="row text-centre">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<div class="carousel-container">
+					<button class="slide-button up">Up</button>
+						<div class="carousel-content-container">
+							<ul class="carousel-content">
+							    <li class="carousel-item">
+							    	<div class="red"></div>
+							    </li>
+							    <li class="carousel-item">
+							    	<div class="green"></div>
+							    </li>
+							    <li class="carousel-item">
+							    	<div class="blue"></div>
+							    </li>
+							    <li class="carousel-item">
+							    	<div class="yellow"></div>
+							    </li>
+							    <li class="carousel-item">
+							    	<div class="red"></div>
+							    </li>
+							    <li class="carousel-item">
+							    	<div class="green"></div>
+							    </li>
+						    </ul>
+						</div>
+					<button class="slide-button down">Down</button>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-4">
-					<h2>Vertical</h2>
-					<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-				</div>
-				<div class="col-md-4">
-					<h2>Horizontal</h2>
-					<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-				</div>
-				<div class="col-md-4">
-					<h2>Custom</h2>
-				</div>
-			</div>	
+			<div class="col-md-4"></div>
 		</div>
 	</div>
+	<script type="text/javascript" src="js/carousel.js"></script>
 </body>
 </html>
