@@ -13,9 +13,11 @@
  		// options
         var settings = $.extend({
             // defaults.
-            color: "blue"
+            color: "blue",
             // carousel item height
+            itemHeight: 80,
             // amount of carousel items to show
+            itemsToShow: 4
             // (set the height of the container based on these)
         }, options );
  
@@ -24,23 +26,38 @@
         	begin(carouselContainer);
         });
 
+        // run the code
         function begin(carouselContainer){
-
-            //specific variables
+            // specific variables
             var carouselContent = carouselContainer.find('.carousel-content'),
                 carouselItem = carouselContent.find('.carousel-item'),
+                numberOfItems = carouselItem.length,
                 buttons = carouselContainer.find('.slide-button');
 
+            // set container height
+            setContainerHeight(settings.itemHeight, settings.itemsToShow, carouselContainer);
+            setItemHeight(carouselContainer, settings.itemHeight);
+            // handle clicking on the buttons
         	buttons.on('click',function(){
         		var button = $(this);
-        		if(canAnimate(carouselContent, button, carouselItem)){
+        		if(canAnimate(carouselContent, button, carouselItem, settings.itemsToShow, numberOfItems)){
         			animate(carouselContent, button, carouselItem);
         		}
         	})
         }
+        // set the height of the carousel-items
+        function setItemHeight(carouselContainer,itemHeight){
+            carouselContainer.find('.carousel-item').height(itemHeight);
+        } 
+
+        // set the height of carousel-content-container based on the carousel-item height and number of items to show
+        function setContainerHeight(itemHeight, itemsToShow, carouselContainer){
+            carouselContainer.find('.carousel-content-container').height(itemHeight*itemsToShow);
+            console.log('height set');
+        }
 
         // check if the slider is in a position to animate
-        function canAnimate(carouselContent, button, carouselItem){
+        function canAnimate(carouselContent, button, carouselItem, itemsToShow, numberOfItems){
             // check if the carousel is mid animation or not
             if((carouselContent.position().top % carouselItem.height())==0){
                 // check whether the slider can move up
@@ -48,7 +65,7 @@
                     return false
                 }
                 // check whether the slider can move up
-                else if (button.hasClass('down') && (carouselContent.position().top == -(carouselItem.height()*(6-4)))){
+                else if (button.hasClass('down') && (carouselContent.position().top == -(carouselItem.height()*(numberOfItems-itemsToShow)))){
                     return false
                 } 
                 // return true if the slider can move
@@ -75,5 +92,3 @@
     };
  
 }( jQuery ));
-
-$('.carousel-container').carousel();

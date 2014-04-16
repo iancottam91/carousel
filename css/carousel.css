@@ -3,7 +3,7 @@
 	margin: 0;
 	padding: 0;
 	position: absolute;
-	top: -80px;
+	top: 0;
 	width: 100%;
 }
 .carousel-content-container{
@@ -19,7 +19,7 @@
 	display: block;
 }
 .carousel-item div{
-	height: 80px;
+	height: 100%;
 	width: 100%;
 }
 
