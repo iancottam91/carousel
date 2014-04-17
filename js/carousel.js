@@ -31,36 +31,36 @@
                 numberOfItems = carouselItem.length,
                 buttons = carouselContainer.find('.slide-button');
             // set container height
-            setContainerHeight(settings.itemHeight, settings.itemsToShow, carouselContainer);
-            setItemHeight(carouselContainer, settings.itemHeight);
+            setContainerHeight(carouselContainer);
+            setItemHeight(carouselContainer);
             // handle clicking on the buttons
             buttons.on('click', function() {
                 var button = $(this);
-                if (canAnimate(carouselContent, button, carouselItem, settings.itemsToShow, numberOfItems)) {
+                if (canAnimate(carouselContent, button, carouselItem, numberOfItems)) {
                     animate(carouselContent, button, carouselItem);
                 }
             });
         }
 
         // set the height of the carousel-items
-        function setItemHeight(carouselContainer, itemHeight) {
-            carouselContainer.find('.carousel-item').height(itemHeight);
+        function setItemHeight(carouselContainer) {
+            carouselContainer.find('.carousel-item').height(settings.itemHeight);
         }
 
         // set the height of carousel-content-container based on the carousel-item height and number of items to show
-        function setContainerHeight(itemHeight, itemsToShow, carouselContainer) {
-            carouselContainer.find('.carousel-content-container').height(itemHeight * itemsToShow);
+        function setContainerHeight(carouselContainer) {
+            carouselContainer.find('.carousel-content-container').height(settings.itemHeight * settings.itemsToShow);
         }
 
         // check if the slider is in a position to animate
-        function canAnimate(carouselContent, button, carouselItem, itemsToShow, numberOfItems) {
+        function canAnimate(carouselContent, button, carouselItem, numberOfItems) {
             // check if the carousel is mid animation or not
             if ((carouselContent.position().top % carouselItem.height()) === 0) {
                 // check whether the slider can move up
                 if (button.hasClass('up') && (carouselContent.position().top === 0)) {
                     return false;
                 } 
-                else if (button.hasClass('down') && (carouselContent.position().top === -(carouselItem.height() * (numberOfItems - itemsToShow)))) {
+                else if (button.hasClass('down') && (carouselContent.position().top === -(carouselItem.height() * (numberOfItems - settings.itemsToShow)))) {
                     return false;
                 }
                 // return true if the slider can move

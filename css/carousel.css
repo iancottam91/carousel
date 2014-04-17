@@ -16,7 +16,8 @@
 }
 .slide-button{
 	margin: 0 auto;
-	display: block;
+	font-size: 40px;
+	cursor: pointer;
 }
 .carousel-item div{
 	height: 100%;
@@ -28,7 +29,7 @@
 .text-centre{
 	text-align: center;
 }
-.red{
+/*.red{
 	background-color: red;
 }
 .yellow{
@@ -39,4 +40,25 @@
 }
 .blue{
 	background-color: blue;
+}*/
+.carousel-item:nth-child(5n+1){
+	background-color: #364C59;
+}
+.carousel-item:nth-child(5n+2){
+	background-color: #657D8C;
+}
+.carousel-item:nth-child(5n+3){
+	background-color: #94A6A4;
+}
+.carousel-item:nth-child(5n+4){
+	background-color: #A6998A;
+}
+.carousel-item:nth-child(5n+5){
+	background-color: #011526;
+}
+.margin-bottom{
+	margin-bottom: 20px;
+}
+.navbar{
+	margin-bottom: 0;
 }
