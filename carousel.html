@@ -9,6 +9,14 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
 </head>
+<!-- To do: 
+1) Convert margin into an option
+2) Move slider left and add description on the right
+3) Use a border instead of margin
+- border top and bottom of 2px on the divs (instead of the margin)
+- padding top and bottom of 2px on the content window, also box-sizing: content-box
+
+-->
 <body>
 	<nav class="navbar navbar-default">
 		<div class="container">
@@ -41,10 +49,12 @@
 			<div class="col-md-8 margin-bottom">
 				<div class="carousel-container">
 					<span class="slide-button up glyphicon glyphicon-chevron-up"></span>
-						<div class="carousel-content-container">
+						<div class="carousel-window">
 							<ul class="carousel-content">
 							    <li class="carousel-item">
-							    	<div></div>
+							    	<div>
+							    		<p></p>
+							    	</div>
 							    </li>
 							    <li class="carousel-item">
 							    	<div></div>

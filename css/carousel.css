@@ -6,20 +6,25 @@
 	top: 0;
 	width: 100%;
 }
-.carousel-content-container{
-	box-shadow: 0 0 8px 2px #aaa;
+.carousel-window{
 	background: #aaa;
+	box-shadow: 0 0 8px 2px #ccc;
 	overflow: hidden;
 	position: relative;
+	box-sizing: content-box;
+	padding-bottom: 4px;
 }
 .carousel-item{
 	list-style-type: none;
-	box-sizing: border-box;
-	padding: 5px;
+	padding: 0 4px;
 }
 .carousel-item div{
-	height: 100%;
+	margin: 4px 0;
+	/* if margins could stack the problem could be fixed by having a margin 2px 0? */
+	margin-bottom: 0;
+	height: 86px;
 	width: 100%;
+	float: left;
 }
 .slide-button{
 	margin: 0 auto;
@@ -48,19 +53,19 @@ body{
 	background-color: blue;
 }*/
 .carousel-item:nth-child(5n+1) div{
-	background-color: #364C59;
+	background-color: #F72F41;
 }
 .carousel-item:nth-child(5n+2) div{
-	background-color: #657D8C;
+	background-color: white;
 }
 .carousel-item:nth-child(5n+3) div{
-	background-color: #94A6A4;
+	background-color: #99C946;
 }
 .carousel-item:nth-child(5n+4) div{
-	background-color: #A6998A;
+	background-color: #FBDB52;
 }
 .carousel-item:nth-child(5n+5) div{
-	background-color: #011526;
+	background-color: #666666;
 }
 .margin-bottom{
 	margin-bottom: 20px;
