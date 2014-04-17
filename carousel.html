@@ -29,8 +29,7 @@
 			</div>
 		</div>	
 		<div class="row text-centre">
-			<div class="col-md-4"></div>
-			<div class="col-md-4">
+			<div class="col-md-6">
 				<div class="carousel-container">
 					<button class="slide-button up">Up</button>
 						<div class="carousel-content-container">
@@ -58,12 +57,33 @@
 					<button class="slide-button down">Down</button>
 				</div>
 			</div>
-			<div class="col-md-4"></div>
+			<div class="col-md-6">
+				<div class="carousel-container">
+					<button class="slide-button up">Up</button>
+						<div class="carousel-content-container">
+							<ul class="carousel-content">
+							    <li class="carousel-item">
+							    	<div class="blue"></div>
+							    </li>
+							    <li class="carousel-item">
+							    	<div class="yellow"></div>
+							    </li>
+							    <li class="carousel-item">
+							    	<div class="red"></div>
+							    </li>
+							    <li class="carousel-item">
+							    	<div class="green"></div>
+							    </li>
+						    </ul>
+						</div>
+					<button class="slide-button down">Down</button>
+				</div>
+			</div>
 		</div>
 	</div>
 	<script type="text/javascript" src="js/carousel.js"></script>
 	<script type="text/javascript">
-		$('.carousel-container').carousel({itemHeight: 90, itemsToShow: 5});
+		$('.carousel-container').carousel({itemHeight: 90, itemsToShow: 3});
 	</script>
 </body>
 </html>
