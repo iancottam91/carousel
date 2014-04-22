@@ -3,7 +3,6 @@
 	margin: 0;
 	padding: 0;
 	position: absolute;
-	top: 0;
 	width: 100%;
 }
 .carousel-window{
@@ -12,17 +11,12 @@
 	overflow: hidden;
 	position: relative;
 	box-sizing: content-box;
-	padding-bottom: 4px;
 }
 .carousel-item{
 	list-style-type: none;
-	padding: 0 4px;
 }
-.carousel-item div{
-	margin: 4px 0;
-	/* if margins could stack the problem could be fixed by having a margin 2px 0? */
+.carousel-item > div{
 	margin-bottom: 0;
-	height: 86px;
 	width: 100%;
 	float: left;
 }
