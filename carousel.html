@@ -44,9 +44,25 @@
 				<h1>Vertical</h1>	
 			</div>
 		</div>	
-		<div class="row text-centre">
-			<div class="col-md-2 margin-bottom"></div>
+		<div class="row">
 			<div class="col-md-8 margin-bottom">
+				<p>This verticle carousel can be used as in the sidebar as a related content feature. The content in the carousel will link to what is displayed in the main article of the page, and provide an attractive feautre to enhance the user experience</p>
+				<h2>Initial Setup</h2>
+				<p>To implement the verticle carousel follow these steps</p>
+				<ol>
+					<li>HTML: You will need to following markup</li>
+					<li>CSS: Basic styles will be added. These can be customised</li>
+					<li>JS: You will need to initialise the carousel by calling <code>$('.carousel-container').carousel();</code> </li>
+				</ol>
+				<h2>Options</h2>
+				<p>There are a number of custom options that can be used with the carousel. These are:</p>
+				<ul>
+					<li>itemHeight</li>
+					<li>itemsToShow</li>
+					<li>spacing</li>
+				</ul>
+			</div>
+			<div class="col-md-4 margin-bottom text-center">
 				<div class="carousel-container">
 					<span class="slide-button up glyphicon glyphicon-chevron-up"></span>
 						<div class="carousel-window">
@@ -82,13 +98,12 @@
 					<span class="slide-button down glyphicon glyphicon-chevron-down"></span>
 				</div>
 			</div>
-			<div class="col-md-2 margin-bottom"></div>
 		</div>
 	</div>
 	<script type="text/javascript" src="js/carousel.js"></script>
 	<script type="text/javascript" src="js/page.js"></script>
 	<script type="text/javascript">
-		$('.carousel-container').carousel({itemHeight: 90, itemsToShow: 4, spacing: 10});
+		$('.carousel-container').carousel({itemHeight: 90, itemsToShow: 4, spacing: 5});
 	</script>
 </body>
 </html>
