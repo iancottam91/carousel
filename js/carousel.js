@@ -21,11 +21,11 @@
         // run carousel code
         return this.each(function() {
             var carouselContainer = $(this);
-            begin(carouselContainer);
+            init(carouselContainer);
         });
 
         // run the code
-        function begin(carouselContainer) {
+        function init(carouselContainer) {
             // specific variables
             var carouselContent = carouselContainer.find('.carousel-content'),
                 carouselItem = carouselContent.find('.carousel-item'),
@@ -56,8 +56,8 @@
 
         // set necessary padding and margins for spacing
         function setSpacing(carouselContainer) {
-            carouselContainer.find('.carousel-content').css({"top": + settings.spacing + "px"})
-            carouselContainer.find('.carousel-window').css({"padding": + settings.spacing + "px 0", "height":'settings.itemHeight * settings.itemsToShow'});
+//            carouselContainer.find('.carousel-content').css({"top": + settings.spacing + "px"})
+            carouselContainer.find('.carousel-window').css({"border-bottom": + settings.spacing + "px solid #aaa","border-top": + settings.spacing + "px solid #aaa"}).css({"height":'settings.itemHeight * settings.itemsToShow'});
             carouselContainer.find('.carousel-item').css({"padding":"0 " + settings.spacing*2 + "px"});
             carouselContainer.find('.carousel-item > div').css({"border-bottom": + settings.spacing + "px solid #aaa","border-top": + settings.spacing + "px solid #aaa"}).height(settings.itemHeight);
         }
@@ -65,13 +65,13 @@
         // check if the slider is in a position to animate
         function canAnimate(carouselContent, button, carouselItem, numberOfItems) {
             // check if the carousel is mid animation or not
-            if (((carouselContent.position().top - settings.spacing) % carouselItem.height()) === 0) {
+            if (((carouselContent.position().top) % carouselItem.height()) === 0) {
                 // check whether the slider can move up
-                if (button.hasClass('up') && (carouselContent.position().top - settings.spacing === 0)) {
+                if (button.hasClass('up') && (carouselContent.position().top === 0)) {
                     // console.log('cant move up');
                     return false;
                 } 
-                else if (button.hasClass('down') && (carouselContent.position().top - settings.spacing === -(carouselItem.height() * (numberOfItems - settings.itemsToShow)))) {
+                else if (button.hasClass('down') && (carouselContent.position().top === -(carouselItem.height() * (numberOfItems - settings.itemsToShow)))) {
                     // console.log('cant move down');
                     return false;
                 }
@@ -91,14 +91,22 @@
             var carouselContentTop = carouselContent.position().top,
                 animationSpeed = 500;
             if (button.hasClass('up')) {
+                console.log(carouselContentTop + carouselItem.height());
                 carouselContent.animate({
-                    top: (carouselContentTop + carouselItem.height() + "px")
+                    top: (carouselContentTop + carouselItem.height() + "px"),
+                    leaveTransforms: true
                 }, animationSpeed);
+
             } else if (button.hasClass('down')) {
+                console.log(carouselContentTop + carouselItem.height());
                 carouselContent.animate({
-                    top: (carouselContentTop - carouselItem.height() + "px")
+                    top: (carouselContentTop - carouselItem.height() + "px"),
+                    leaveTransforms: true                    
                 }, animationSpeed);
             }
         }
     };
 }(jQuery));
+
+
+
