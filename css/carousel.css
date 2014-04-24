@@ -4,6 +4,7 @@
 	padding: 0;
 	position: absolute;
 	width: 100%;
+/*	z-index: 99;*/
 }
 .carousel-window{
 	background: #aaa;
@@ -11,6 +12,7 @@
 	overflow: hidden;
 	position: relative;
 	box-sizing: content-box;
+/*	z-index: 9;*/
 }
 .carousel-item{
 	list-style-type: none;
@@ -33,18 +35,6 @@
 body{
 	background-color: #eee;
 }
-/*.red{
-	background-color: red;
-}
-.yellow{
-	background-color: yellow;
-}
-.green{
-	background-color: green;
-}
-.blue{
-	background-color: blue;
-}*/
 .carousel-item:nth-child(5n+1) div{
 	background-color: #F72F41;
 }

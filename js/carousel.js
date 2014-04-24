@@ -3,6 +3,7 @@
 // 2) if so proceed, if not return false
 // 3) if button clicked is up and top != 0 animate top by - height of carousel item
 // 4) if button clicked is down and top != (height of carousel item) * (total carousel items - number of carousel items showing) animate top by + height of carousel item
+
 (function($) {
     "use strict";
     $.fn.carousel = function(options) {
@@ -14,7 +15,9 @@
             // spacing,
             spacing: 2,
             // amount of carousel items to show
-            itemsToShow: 4
+            itemsToShow: 4,
+            // animation speed
+            animationSpeed: 500
             // (set the height of the container based on these)
         }, options);
 
@@ -56,53 +59,46 @@
 
         // set necessary padding and margins for spacing
         function setSpacing(carouselContainer) {
-//            carouselContainer.find('.carousel-content').css({"top": + settings.spacing + "px"})
             carouselContainer.find('.carousel-window').css({"border-bottom": + settings.spacing + "px solid #aaa","border-top": + settings.spacing + "px solid #aaa"}).css({"height":'settings.itemHeight * settings.itemsToShow'});
             carouselContainer.find('.carousel-item').css({"padding":"0 " + settings.spacing*2 + "px"});
             carouselContainer.find('.carousel-item > div').css({"border-bottom": + settings.spacing + "px solid #aaa","border-top": + settings.spacing + "px solid #aaa"}).height(settings.itemHeight);
         }
 
-        // check if the slider is in a position to animate
+        // check if the slider is in a position that allows an animation
         function canAnimate(carouselContent, button, carouselItem, numberOfItems) {
             // check if the carousel is mid animation or not
             if (((carouselContent.position().top) % carouselItem.height()) === 0) {
                 // check whether the slider can move up
                 if (button.hasClass('up') && (carouselContent.position().top === 0)) {
-                    // console.log('cant move up');
                     return false;
                 } 
+                // check whether the slider can move down
                 else if (button.hasClass('down') && (carouselContent.position().top === -(carouselItem.height() * (numberOfItems - settings.itemsToShow)))) {
-                    // console.log('cant move down');
                     return false;
                 }
                 // return true if the slider can move
                 else {
-                    // console.log('animate');
                     return true;
                 }
             } else {
-                // console.log('incorrect position');
                 return false;
             }
         }
 
         // move the carousel based on the button clicked
         function animate(carouselContent, button, carouselItem) {
-            var carouselContentTop = carouselContent.position().top,
-                animationSpeed = 500;
+            var carouselContentTop = carouselContent.position().top;
             if (button.hasClass('up')) {
-                console.log(carouselContentTop + carouselItem.height());
                 carouselContent.animate({
                     top: (carouselContentTop + carouselItem.height() + "px"),
                     leaveTransforms: true
-                }, animationSpeed);
+                }, settings.animationSpeed);
 
             } else if (button.hasClass('down')) {
-                console.log(carouselContentTop + carouselItem.height());
                 carouselContent.animate({
                     top: (carouselContentTop - carouselItem.height() + "px"),
                     leaveTransforms: true                    
-                }, animationSpeed);
+                }, settings.animationSpeed);
             }
         }
     };

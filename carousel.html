@@ -9,14 +9,13 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
     <script src="js/animate_enhanced.js"></script>
+    <!--[if (gte IE 6)&(lte IE 8)]>
+	  <script type="text/javascript" src="js/selectivizr-min.js"></script>
+	<![endif]-->
 </head>
 <!-- To do: 
-1) Convert margin into an option
-2) Move slider left and add description on the right
-3) Use a border instead of margin
-- border top and bottom of 2px on the divs (instead of the margin)
-- padding top and bottom of 2px on the content window, also box-sizing: content-box
-
+1) Write up options
+2) Comment js code
 -->
 <body>
 	<nav class="navbar navbar-default">
@@ -104,7 +103,7 @@
 	<script type="text/javascript" src="js/carousel.js"></script>
 	<script type="text/javascript" src="js/page.js"></script>
 	<script type="text/javascript">
-		$('.carousel-container').carousel({itemHeight: 90, itemsToShow: 4, spacing: 4});
+		$('.carousel-container').carousel({itemHeight: 100, itemsToShow: 4, spacing: 3});
 	</script>
 </body>
 </html>
