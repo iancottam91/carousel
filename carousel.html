@@ -27,7 +27,7 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 	            </button>
-	          <a class="navbar-brand" href="#">Explore Bootstrap</a>
+	          <a class="navbar-brand" href="#">Build A Carousel</a>
 	        </div>
 	        <div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
@@ -46,7 +46,20 @@
 		</div>	
 		<div class="row">
 			<div class="col-md-8 margin-bottom">
-				<p>This verticle carousel can be used as in the sidebar as a related content feature. The content in the carousel will link to what is displayed in the main article of the page, and provide an attractive feautre to enhance the user experience</p>
+				<p>This verticle carousel is ideal for use in the sidebar of a webpage. For example, you might like a related content feature. The content in the carousel will be similar to what is displayed in the main article of the page, providing an attractive feautre to enhance the user experience. The related videos on this page could be presented in a carousel: <a target="blank" href="http://www.bbc.co.uk/sport/0/formula1/22404172">http://www.bbc.co.uk/sport/0/formula1/22404172</a></p>
+				<h2>Options</h2>
+				<p>There are a number of custom options that can be used with the carousel. These are:</p>
+				<ul class="options-list">
+					<li>
+						<h4>itemHeight: </h4><p>This sets the height in pixels of the individual carousel boxes. The default value is 80px</p><code class="language-javascript">$('.carousel-container').carousel({itemHeight: 100})</code>
+					</li>
+					<li>
+						<h4>iitemsToShow: </h4><p>This sets the number of items to display. The default value is 4</p><code class="language-javascript">$('.carousel-container').carousel({itemsToShow: 4})</code>
+					</li>
+					<li>
+						<h4>spacing: </h4><p>This sets spacing in pixels between each indiviual item on the carousel. This spacing will also apply to the gap between the carousel items and the edge of the container. The default value is 2px</p><code class="language-javascript">$('.carousel-container').carousel({spacing: 3})</code>
+					</li>
+				</ul>
 				<h2>Initial Setup</h2>
 				<p>To implement the verticle carousel follow these steps</p>
 				<ol>
@@ -54,13 +67,6 @@
 					<li>CSS: Basic styles will be added. These can be customised</li>
 					<li>JS: You will need to initialise the carousel by calling <code>$('.carousel-container').carousel();</code> </li>
 				</ol>
-				<h2>Options</h2>
-				<p>There are a number of custom options that can be used with the carousel. These are:</p>
-				<ul>
-					<li>itemHeight</li>
-					<li>itemsToShow</li>
-					<li>spacing</li>
-				</ul>
 			</div>
 			<div class="col-md-4 margin-bottom text-center">
 				<div class="carousel-container">

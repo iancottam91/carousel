@@ -29,6 +29,10 @@
 }
 
 /* Page styles */
+.options-list{
+	list-style-type: none;
+	padding-left: 20px;
+}
 .text-centre{
 	text-align: center;
 }
